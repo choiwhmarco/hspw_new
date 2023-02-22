@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-material.css";
-import { DATA } from "./data_gene";
+import { DATA } from "./data_signature";
 
 function App() {
   const [gridApi, setGridApi] = useState();
@@ -15,13 +15,15 @@ function App() {
 
   const columns = [
     {
-      headerName: "Gene",
-      field: "gene",
+      headerName: "InterPro_ID",
+      field: "InterPro_ID",
       checkboxSelection: true,
       headerCheckboxSelection: true,
+      maxWidth:320
     },
-    { headerName: "Gene Name", field: "gene_name",wrapText: true,autoHeight: true,cellStyle:{'word-break': 'break-word'}},
-    { headerName: "Location", field: "location" },
+    { headerName: "Type", field: "Type",wrapText: true,maxWidth:145 },
+    { headerName: "Name", field: "Name",wrapText: true,autoHeight: true,cellStyle:{'word-break': 'break-word'} },
+    { headerName: "# of Members", field: "Number_of_Members",wrapText: true,maxWidth:205 },
 
 ];
 
@@ -29,7 +31,7 @@ function App() {
 
   const onGridReady = (params) => {
     setGridApi(params);
-    expandFilters(params, "gene");
+    expandFilters(params, "InterPro_ID");
   };
 
   const expandFilters = (params, ...filters) => {

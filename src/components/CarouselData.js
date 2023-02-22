@@ -1,4 +1,4 @@
-import covid from "./covid.jpeg";
+import covid from "./hero-coronavirus.jpg";
 import main_feature from "./main-featured.png";
 import salivary_protein from "./salivary_proteins.png";
 import pubmed from "./pubmed-logo.png"
@@ -13,8 +13,8 @@ export const images = [
     img: hero,
   },
   {
-    title: "SARS COVID-19",
-    subtitle: "Our new JCVI covid-19 data is available.",
+    title: "Clinical Application: Sars-CoV-2 in Saliva",
+    subtitle: "Via shotgun proteomics, we have mapped salivary proteomes of COVID-19 and healthy subjects. We aim to understand further the molecular cues of the virus on the context of health and disease.",
     img: covid,
   },
 ];

@@ -13,6 +13,11 @@ export const options = {
   title: "Disease Types",
   pieHole: 0.4,
   is3D: false,
+  titlePosition:'out',
+  titleTextStyle:{
+    fontSize:'18',
+    bold:true,
+  }
 };
 
 export function donutChart_google() {
@@ -20,7 +25,7 @@ export function donutChart_google() {
     <Chart
       chartType="PieChart"
       width="600px"
-      height="200px"
+      height="250px"
       data={data}
       options={options}
     />

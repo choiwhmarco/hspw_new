@@ -6,30 +6,34 @@ import { Link } from "react-router-dom";
 
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-material.css";
-import { DATA } from "./data_gene";
+import { DATA } from "./data_cluster";
 
 function App() {
   const [gridApi, setGridApi] = useState();
   const rowData = DATA;
 
-
   const columns = [
     {
-      headerName: "Gene",
-      field: "gene",
+      headerName: "Cluster",
+      field: "Cluster",
       checkboxSelection: true,
       headerCheckboxSelection: true,
+      maxWidth:195,
+      minWidth:195,
+      wrapText: true
     },
-    { headerName: "Gene Name", field: "gene_name",wrapText: true,autoHeight: true,cellStyle:{'word-break': 'break-word'}},
-    { headerName: "Location", field: "location" },
+    { headerName: "Representative Protein", field: "Representative_Protein",maxWidth:205,wrapText: true,suppressSizeToFit: true },
+    { headerName: "Representative Protein Name", field: "Representative_Protein_Name",wrapText: true,autoHeight: true,cellStyle:{'word-break': 'break-word'} },
+    { headerName: "# of Members", field: "Number_of_Members",wrapText: true,maxWidth:145,maxWidth:145 },
 
 ];
 
-  const defColumnDefs = { flex: 1, filter: true };
+  const defColumnDefs = { flex: 1, filter: true,wrapHeaderText: true,
+    autoHeaderHeight: true, };
 
   const onGridReady = (params) => {
     setGridApi(params);
-    expandFilters(params, "gene");
+    expandFilters(params, "Cluster");
   };
 
   const expandFilters = (params, ...filters) => {
@@ -43,7 +47,7 @@ function App() {
   };
   return (
     <div className="AppBox1">
-      <div className="ag-theme-material ag-cell-wrap-text" style={{ height: 600 }}>
+      <div className="ag-theme-material ag-cell-wrap-text ag-theme-alpine" style={{ height: 600 }}>
         <AgGridReact
           className="ag-cell-wrap-text"
           rowData={rowData}

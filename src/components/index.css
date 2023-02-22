@@ -22,7 +22,7 @@ body {
   position: relative;
 }
 
-/* Styles enabling the fixed width view */
+/* Styles enabling the fixed width view 
 #application[data-layout="fixed"] header > div,
 #application[data-layout="fixed"] > #page-content,
 #application[data-layout="fixed"] > #footer .footer-top {
@@ -30,6 +30,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+*/
 #application[data-layout="fixed"] .css-onape-MuiStack-root {
   margin-left: 0px;
 }
@@ -347,7 +348,7 @@ button span {
     padding: 0;
     margin-left: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 

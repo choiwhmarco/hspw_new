@@ -2,7 +2,7 @@ import { AppBar,Toolbar,IconButton,Typography,Stack,Button, MenuItem,Menu,Box } 
 import logo from './hspw_logo.png';
 import React, { useState } from "react";
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'; 
 import {
   createTheme,
   PaletteColorOptions,
@@ -25,7 +25,7 @@ export const MuiDrawer = () => {
         src={logo}
       />
         <Stack direction='row' spacing={2} sx={{ml:8}}>
-          <Button color="primary" size="large" style={{ fontSize: '22px' }}>Home</Button>
+          <Button color="primary" size="large" style={{ fontSize: '22px' }} component="a" href="/">Home</Button>
           <PopupState variant="popover" popupId="demo-popup-menu" sx={{ml:5}}>
           {(popupState) => (
             <React.Fragment>
@@ -33,10 +33,10 @@ export const MuiDrawer = () => {
               Browse
             </Button>
             <Menu {...bindMenu(popupState)}>
-              <MenuItem onClick={popupState.close}>Salivary proteins</MenuItem>
-              <MenuItem onClick={popupState.close}>Protein clusters</MenuItem>
-              <MenuItem onClick={popupState.close}>Protein signatures</MenuItem>
-              <MenuItem onClick={popupState.close}>Genes</MenuItem>
+              <MenuItem onClick={popupState.close} component="a" href="/salivary_protein">Salivary proteins</MenuItem>
+              <MenuItem onClick={popupState.close} component="a" href="/protein_cluster">Protein clusters</MenuItem>
+              <MenuItem onClick={popupState.close} component="a" href="/protein_signature">Protein signatures</MenuItem>
+              <MenuItem onClick={popupState.close} component="a" href="/gene">Genes</MenuItem>
               <MenuItem onClick={popupState.close}>Citations</MenuItem>
             </Menu>
         </React.Fragment>

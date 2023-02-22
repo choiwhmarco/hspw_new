@@ -74,6 +74,7 @@ function App() {
           columnDefs={columns}
           defaultColDef={defColumnDefs}
           onGridReady={onGridReady}
+          /*
           sideBar={{
             position: 'left',
             toolPanels: [
@@ -126,9 +127,8 @@ function App() {
                 ),
               },
             ],
-            defaultToolPanel: 'filters'
+          defaultToolPanel: 'filters'*/
             // position: "right",
-          }}
         />
       </div>
     </div>

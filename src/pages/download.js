@@ -8,6 +8,7 @@ import { components } from "react-select";
 import { default as ReactSelect } from "react-select";
 import DonutChart_google from "../components/donutChart_google.tsx";
 import BarChart_google from "../components/barChart_google.tsx";
+import Filter from "../components/filter.js";
 
 const Option = (props) => {
   return (
@@ -47,13 +48,14 @@ const Download = () => {
         <div style={{backgroundColor: '#254A61'}}>
           <h2 style={{color:'white', textAlign:'center', alignItems:'center'}}>FILTER</h2>
         </div>
-        
+        <Filter />
       </div>
       <div className="charts">
         <BarChart_google />
         <DonutChart_google />
       </div>
     </div>
+    <AgGrid />
       </>
 
   );

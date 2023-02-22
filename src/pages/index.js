@@ -13,7 +13,9 @@ import pubmed from '../components/icon-pubmed.png';
 import gene from '../components/icon-gene.png';
 import protein_cluster from '../components/icon-clustering.png';
 import api from '../components/icon-api.png';
-import { cluster } from 'd3';
+import help from '../components/icon-help.png';
+import { Timeline } from 'react-twitter-widgets'
+import { PopupService } from 'ag-grid-community';
 
 
 /*
@@ -63,7 +65,8 @@ class Home extends React.Component {
             {
               imageSrc: analysis,
               title: 'Protein Analysis',
-              blurb: 'Evaluate proteins, quantify abundance and perform statistics.'
+              blurb: 'Evaluate proteins, quantify abundance and perform statistics.',
+              location: '/analysis_home'
             },
             {
               imageSrc: upload,
@@ -83,7 +86,8 @@ class Home extends React.Component {
             {
               imageSrc: gene,
               title: 'Find Gene',
-              blurb: 'A locatable region of genomic sequence, corresponding to a unit of inheritance.'
+              blurb: 'A locatable region of genomic sequence, corresponding to a unit of inheritance.',
+              location:"/gene"
             },
             {
               imageSrc: protein_cluster,
@@ -93,22 +97,25 @@ class Home extends React.Component {
             {
               imageSrc: api,
               title: 'API',
-              blurb: 'Allows access to the datasets by retrieving requested data in JSON format.'
+              blurb: 'Allows access to the datasets by retrieving requested data in JSON format.',
             },
             {
-              size: '2',
               destination: false,
               rawContent:
                 <div className='basic-card-content basic-card-content-centered'>
-                  <h4>Statistics</h4>
-                  <ul className="bulletless">
-                    <li>7 Contributing Institutions</li>
-                    <li>7 Studies</li>
-                    <li>946 Datasets</li>
-                    <li>5 Tissue Types</li>
-                    <li>3 Diseases + Healthy Controls</li>
-                  </ul>
+                  <Timeline dataSource={{ sourceType: "profile", screenName: "reactjs" }} options={{ borderColor: "#FF0000", width: "300", height: "310" }}/>            
                 </div>
+            },
+            {
+              destination: false,
+              rawContent:
+                <div className='basic-card-content basic-card-content-centered'>
+                    <h3>Information for HSPW Users</h3>
+                    <img src={help}></img>
+                    <ul className="bulletless">
+                      <li>The new HSPW is built on the AWS system. Data and analysis tools and services from HSPW have now been integrated into the resource.</li>
+                    </ul>
+                  </div>
             },
             {
               size: '2',
@@ -144,13 +151,13 @@ class Home extends React.Component {
                         imageSrc={props.imageSrc}
                         title={props.title}
                         blurb={props.blurb}
+                        location={props.location}
                       />
                     );
                   })
                 }
               </div>
             </div>
-            <Footer />
           </div>
         </StyledEngineProvider>
       </React.StrictMode>      

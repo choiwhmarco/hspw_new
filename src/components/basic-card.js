@@ -1,3 +1,4 @@
+import { TrendingUpSharp } from '@mui/icons-material';
 import React from 'react';
 import './basic-card.css';
 
@@ -28,6 +29,7 @@ class BasicCard extends React.Component {
     let content = this.props.rawContent;
 		if(!content) {
 			content = 
+			<a href={this.props.location}>
 				<div className='basic-card-content'>
 					<div className="basic-card-image-wrapper">
 						<img src={this.props.imageSrc} />
@@ -35,6 +37,7 @@ class BasicCard extends React.Component {
 					<h4>{ this.props.title }</h4>
 					<p>{ this.props.blurb }</p>
 				</div>
+				</a>
 			;
 		}
 		let destination = this.props.destination;

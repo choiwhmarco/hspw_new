@@ -96,8 +96,15 @@
     }
     
     .AppBox{
-      width:100%;
+      width:1100px;
+      margin-left: 250px;
+      margin-top: 10px;
     }
+
+    .AppBox1{
+      margin-top: 10px;
+    }
+
     .App-header {
       background-color: #282c34;
       min-height: 100vh;
@@ -130,4 +137,8 @@
     .ag-cell-wrap-text {
       white-space: nowrap ;
       word-break: break-word;
-}
+    }
+
+    .ag-theme-alpine {
+      --ag-header-height: 50px;
+    }

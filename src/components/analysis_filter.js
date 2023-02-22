@@ -8,7 +8,7 @@ import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Css, Html, Javascript } from "@mui/icons-material";
 
-import { menu } from "./menu";
+import { menu } from "./menu1.js";
 import { hasChildren } from "./utils";
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -16,7 +16,7 @@ import Checkbox from '@mui/material/Checkbox';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export default function Filter() {
+export default function Analysis_Filter() {
   return menu.map((item, key) => <MenuItem key={key} item={item} />);
 }
 

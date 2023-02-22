@@ -25,6 +25,10 @@
 .basic-card[data-destination="true"]:hover {
 	background-color: rgba(0, 0, 0, .05); 
 }
+.basic-card[data-size="1"] {
+	width: calc(var(--basic-card-width) - var(--basic-card-spacing));
+	--basic-card-width: 31%;
+}
 .basic-card[data-size="2"] {
 	width: calc(2 * var(--basic-card-width) - 2 * var(--basic-card-spacing));
 }
